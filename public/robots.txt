@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /thank-you
+Disallow: /api/
+
+# Host
+Host: https://maxperformance100.com
+
+# Sitemaps
+Sitemap: https://maxperformance100.com/sitemap.xml
