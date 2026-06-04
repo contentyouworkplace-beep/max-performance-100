@@ -6,7 +6,7 @@ import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaM
 export const metadata: Metadata = {
   title: "Client Scope & Protection Playbook — $47 | Stop Scope Creep & Get Paid on Time",
   description:
-    "The complete 6-module client protection system for US freelancers and agencies. Scope of work template, revision policy, payment terms, 13 email scripts. $47 one-time download — 14-day guarantee.",
+    "The complete 6-module client protection system for freelancers and service businesses worldwide. Scope of work template, revision policy, payment terms, 13 email scripts. $47 one-time download — 14-day guarantee.",
   alternates: { canonical: "https://maxperformance100.com/product" },
   openGraph: {
     title: "Client Scope & Protection Playbook — $47 One-Time",
@@ -143,7 +143,7 @@ export default function ProductPage() {
       }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 70% 30%, rgba(245,158,11,0.1) 0%, transparent 50%)", pointerEvents: "none" }} />
         <div style={{ maxWidth: "860px", margin: "0 auto", position: "relative" }}>
-          <span className="badge" style={{ marginBottom: "1.5rem", display: "inline-block" }}>Complete Bundle — Instant Download</span>
+          <span className="badge" style={{ marginBottom: "1.5rem", display: "inline-block" }}>Complete Bundle · Instant Download · Works Worldwide</span>
           <h1 style={{
             fontSize: "clamp(2rem, 5.5vw, 3.5rem)", fontWeight: 900, color: "#fff",
             lineHeight: 1.1, marginBottom: "1.25rem", letterSpacing: "-0.03em"
@@ -214,8 +214,7 @@ export default function ProductPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
             {[
               { icon: "📕", title: "PDF Version", desc: "Read anywhere on any device — phone, tablet, desktop. Perfect for reference." },
-              { icon: "📝", title: "Word Document", desc: "Fully editable .docx file. Add your name, brand, and customize every template." },
-              { icon: "⚡", title: "Cheat Sheet", desc: "Quick-reference one-pager with the key rules from all 6 modules in plain English." },
+              { icon: "📝", title: "Word Document + Cheat Sheet", desc: "Fully editable .docx file plus a quick-reference cheat sheet — customize every template with your name and brand." },
               { icon: "📧", title: "13 Email Scripts", desc: "Copy-paste email templates for every difficult client conversation." },
             ].map(({ icon, title, desc }) => (
               <div key={title} className="card" style={{ textAlign: "center" }}>

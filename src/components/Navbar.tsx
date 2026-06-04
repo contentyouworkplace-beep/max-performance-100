@@ -1,58 +1,74 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/product", label: "Playbook" },
+  { href: "/resources", label: "Resources" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header style={{ background: "#0f172a", borderBottom: "1px solid rgba(255,255,255,0.08)", position: "sticky", top: 0, zIndex: 50 }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
-          <div style={{ width: "32px", height: "32px", background: "linear-gradient(135deg, #f59e0b, #d97706)", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <span style={{ color: "#0f172a", fontWeight: 800, fontSize: "14px" }}>M</span>
-          </div>
-          <span style={{ color: "#fff", fontWeight: 800, fontSize: "1.1rem", letterSpacing: "-0.02em" }}>MaxPerformance<span style={{ color: "#f59e0b" }}>100</span></span>
+    <header style={{ background: "#0F1F3D", borderBottom: "1px solid rgba(201,168,76,0.15)", position: "sticky", top: 0, zIndex: 50 }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: "68px" }}>
+
+        {/* Logo */}
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none", flexShrink: 0 }}>
+          <Image
+            src="/logo.jpeg"
+            alt="MaxPerformance100"
+            width={40}
+            height={40}
+            style={{ borderRadius: "6px", objectFit: "cover" }}
+          />
+          <span style={{ color: "#fff", fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.02em", lineHeight: 1.2 }}>
+            Max<span style={{ color: "#C9A84C" }}>Performance</span><span style={{ color: "#C9A84C" }}>100</span>
+          </span>
         </Link>
 
-        <nav style={{ display: "flex", gap: "1.75rem", alignItems: "center" }} className="hidden-mobile">
-          <Link href="/" style={{ color: "#94a3b8", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>Home</Link>
-          <Link href="/product" style={{ color: "#94a3b8", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>Playbook</Link>
-          <Link href="/resources" style={{ color: "#94a3b8", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>Resources</Link>
-          <Link href="/blog" style={{ color: "#94a3b8", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>Blog</Link>
-          <Link href="/about" style={{ color: "#94a3b8", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>About</Link>
-          <Link href="/product" className="btn-primary" style={{ padding: "0.5rem 1.25rem", fontSize: "0.875rem" }}>
+        {/* Desktop nav */}
+        <nav style={{ display: "flex", gap: "1.5rem", alignItems: "center" }} className="hidden-mobile">
+          {navLinks.map(({ href, label }) => (
+            <Link key={href} href={href} style={{ color: "#CBD5E1", textDecoration: "none", fontSize: "0.875rem", fontWeight: 500, transition: "color 0.15s" }}
+              onMouseEnter={e => (e.currentTarget.style.color = "#C9A84C")}
+              onMouseLeave={e => (e.currentTarget.style.color = "#CBD5E1")}>
+              {label}
+            </Link>
+          ))}
+          <Link href="/product" className="btn-primary" style={{ padding: "0.5rem 1.25rem", fontSize: "0.85rem" }}>
             Get the Playbook — $47
           </Link>
         </nav>
 
+        {/* Mobile hamburger */}
         <button
           onClick={() => setOpen(!open)}
           style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: "0.5rem" }}
           className="mobile-menu-btn"
           aria-label="Toggle menu"
         >
-          <div style={{ width: "22px", height: "2px", background: "#fff", marginBottom: "5px" }} />
-          <div style={{ width: "22px", height: "2px", background: "#fff", marginBottom: "5px" }} />
-          <div style={{ width: "22px", height: "2px", background: "#fff" }} />
+          <div style={{ width: "22px", height: "2px", background: "#fff", marginBottom: "5px", transition: "all 0.2s" }} />
+          <div style={{ width: "22px", height: "2px", background: "#fff", marginBottom: "5px", transition: "all 0.2s" }} />
+          <div style={{ width: "22px", height: "2px", background: "#fff", transition: "all 0.2s" }} />
         </button>
       </div>
 
+      {/* Mobile menu */}
       {open && (
-        <div style={{ background: "#0f172a", borderTop: "1px solid rgba(255,255,255,0.1)", padding: "1rem 1.5rem" }}>
-          {[
-            { href: "/", label: "Home" },
-            { href: "/product", label: "Playbook" },
-            { href: "/resources", label: "Resources" },
-            { href: "/blog", label: "Blog" },
-            { href: "/about", label: "About" },
-            { href: "/contact", label: "Contact" },
-          ].map(({ href, label }) => (
+        <div style={{ background: "#0F1F3D", borderTop: "1px solid rgba(201,168,76,0.15)", padding: "1rem 1.5rem" }}>
+          {navLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              style={{ display: "block", color: "#e2e8f0", padding: "0.75rem 0", fontSize: "1rem", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
+              style={{ display: "block", color: "#E2E8F0", padding: "0.75rem 0", fontSize: "1rem", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
             >
               {label}
             </Link>
@@ -67,13 +83,6 @@ export default function Navbar() {
           </Link>
         </div>
       )}
-
-      <style>{`
-        @media (max-width: 768px) {
-          .hidden-mobile { display: none !important; }
-          .mobile-menu-btn { display: block !important; }
-        }
-      `}</style>
     </header>
   )
 }

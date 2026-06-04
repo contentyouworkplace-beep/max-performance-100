@@ -6,11 +6,11 @@ import Footer from "@/components/Footer"
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxperformance100.com"),
   title: {
-    default: "MaxPerformance100 — Freelancer Business Tools & Client Protection for US Professionals",
+    default: "MaxPerformance100 — Client Protection & Business Tools for Freelancers",
     template: "%s | MaxPerformance100",
   },
   description:
-    "MaxPerformance100 helps US freelancers and agencies stop scope creep, get paid on time, and protect their business with professional templates, contracts, and client management systems.",
+    "MaxPerformance100 helps freelancers and service businesses stop scope creep, get paid on time, and protect their business with professional templates, contracts, and client management systems.",
   keywords: [
     "freelancer tools", "scope of work template", "freelance contract template", "scope creep prevention",
     "client protection playbook", "payment terms freelance", "client intake form", "freelancer business",
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://maxperformance100.com",
     siteName: "MaxPerformance100",
-    title: "MaxPerformance100 — Client Scope & Protection Playbook for US Freelancers",
+    title: "MaxPerformance100 — Stop Scope Creep & Protect Your Freelance Business",
     description:
-      "Stop scope creep, protect your payments, and build a professional freelance business. Download the complete 6-module system trusted by 1,000+ US freelancers.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "MaxPerformance100 Client Scope & Protection Playbook" }],
+      "The complete 6-module client protection system. 6 modules, 13 email scripts, instant download. $47 one-time.",
+    images: [{ url: "/logo.jpeg", width: 1080, height: 1080, alt: "MaxPerformance100 — Client Protection for Freelancers" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "MaxPerformance100 — Stop Scope Creep & Get Paid on Time",
-    description: "The complete client protection system for US freelancers and agencies. 6 modules, 13 email scripts, $47 one-time.",
-    images: ["/og-image.png"],
+    description: "The complete client protection system for freelancers and service businesses worldwide. 6 modules, 13 email scripts, $47 one-time.",
+    images: ["/logo.jpeg"],
   },
   robots: {
     index: true,
@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
   },
   alternates: { canonical: "https://maxperformance100.com" },
+  verification: {
+    google: "googlec1b155cb6acd07f9",
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

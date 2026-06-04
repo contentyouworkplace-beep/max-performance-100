@@ -13,10 +13,10 @@ export default function CTABox({
 }: CTABoxProps) {
   const bg =
     variant === "dark"
-      ? "linear-gradient(135deg, #0f172a, #1e3a8a)"
+      ? "linear-gradient(135deg, #0F1F3D, #1A3467)"
       : variant === "light"
-      ? "#f8fafc"
-      : "linear-gradient(135deg, #1e40af, #1e3a8a)"
+      ? "#EEE8DE"
+      : "linear-gradient(135deg, #1A3467, #0F1F3D)"
 
   const headingColor = variant === "light" ? "#0f172a" : "#fff"
   const subtextColor = variant === "light" ? "#64748b" : "#cbd5e1"
