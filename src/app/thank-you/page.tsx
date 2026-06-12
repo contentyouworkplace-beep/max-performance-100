@@ -22,8 +22,9 @@ export default function ThankYouPage() {
             Welcome! Your Playbook Is Ready.
           </h1>
           <p style={{ color: "#cbd5e1", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "2rem" }}>
-            Thank you for your purchase! Your <strong style={{ color: "#f59e0b" }}>Client Scope & Protection Playbook</strong> download link has been sent to your email.
-            Check your inbox (and spam folder) for an email from PayPal and MaxPerformance100.
+            Thank you for your purchase! Your <strong style={{ color: "#f59e0b" }}>Client Scope & Protection Playbook</strong> download links are being sent to the email
+            address you used at PayPal checkout. They usually arrive within a few minutes — check your inbox and spam folder.
+            If nothing arrives within 15 minutes, email us and we&apos;ll send your files directly.
           </p>
 
           <div style={{

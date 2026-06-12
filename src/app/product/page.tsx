@@ -167,7 +167,7 @@ export default function ProductPage() {
             {/* PayPal Buy Button */}
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style={{ marginBottom: "1rem" }}>
               <input type="hidden" name="cmd" value="_xclick" />
-              <input type="hidden" name="business" value="rahulmedhe05@gmail.com" />
+              <input type="hidden" name="business" value="dchtristate@gmail.com" />
               <input type="hidden" name="lc" value="US" />
               <input type="hidden" name="item_name" value="Client Scope & Protection Playbook — Complete Bundle" />
               <input type="hidden" name="item_number" value="CSPP-001" />
@@ -365,15 +365,17 @@ export default function ProductPage() {
 
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style={{ marginBottom: "1.5rem" }}>
             <input type="hidden" name="cmd" value="_xclick" />
-            <input type="hidden" name="business" value="rahulmedhe05@gmail.com" />
+            <input type="hidden" name="business" value="dchtristate@gmail.com" />
             <input type="hidden" name="lc" value="US" />
             <input type="hidden" name="item_name" value="Client Scope & Protection Playbook — Complete Bundle" />
             <input type="hidden" name="item_number" value="CSPP-001" />
             <input type="hidden" name="amount" value="47.00" />
             <input type="hidden" name="currency_code" value="USD" />
             <input type="hidden" name="no_shipping" value="1" />
+            <input type="hidden" name="rm" value="1" />
             <input type="hidden" name="return" value="https://maxperformance100.com/thank-you" />
             <input type="hidden" name="cancel_return" value="https://maxperformance100.com/product" />
+            <input type="hidden" name="notify_url" value="https://maxperformance100.com/api/paypal-ipn" />
             <button
               type="submit"
               style={{

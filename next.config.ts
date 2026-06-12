@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   // Generate static exports for all dynamic routes
   output: "standalone",
 
+  // Bundle the paid product files (in /private) with the download route
+  outputFileTracingIncludes: {
+    "/api/download": ["./private/**/*"],
+  },
+
   // Image optimization
   images: {
     formats: ["image/avif", "image/webp"],

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import Clarity from "@/components/Clarity"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxperformance100.com"),
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <Clarity />
         <Navbar />
         <main>{children}</main>
         <Footer />
