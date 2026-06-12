@@ -15,8 +15,8 @@ Push to `main` — Vercel auto-deploys. The new API routes do nothing harmful wi
 
 1. Sign up at https://resend.com (free: 3,000 emails/month, 100/day).
 2. **Domains → Add Domain** → enter `maxperformance100.com` → region closest to your buyers.
-3. Resend shows DNS records (1 MX + 2 TXT for DKIM/SPF). Add them at the registrar where the domain's DNS is managed (GoDaddy/Namecheap/Cloudflare/Vercel Domains).
-   - If DNS is on Vercel: Vercel dashboard → **Domains** → maxperformance100.com → DNS Records → add each one exactly as Resend shows.
+3. Resend shows DNS records (1 MX + 2 TXT for DKIM/SPF). Add them at the registrar where the domain's DNS is managed (Spaceship for this domain).
+   - Spaceship: Domains → maxperformance100.com → Advanced DNS → add each record. Enter hosts WITHOUT the domain suffix (`send`, not `send.maxperformance100.com`).
 4. Back in Resend click **Verify DNS Records** — usually verifies in 5–30 min.
 5. **API Keys → Create API Key** → name `maxperformance100-prod`, permission "Sending access" → copy the `re_...` key (shown once).
 
@@ -24,7 +24,7 @@ Push to `main` — Vercel auto-deploys. The new API routes do nothing harmful wi
 
 1. Go to https://clarity.microsoft.com → sign in (any Microsoft/Google account).
 2. **New project** → Name: `MaxPerformance100`, Website: `https://maxperformance100.com`, category: Business.
-3. When asked how to install, pick **Install manually** — the code is already in the site (`src/components/Clarity.tsx`). You only need the **Project ID**: Settings → **Overview** → copy the ID (short string like `abc1de2fgh`).
+3. When asked how to install, pick **Install manually** — the code is already in the site (`src/components/Clarity.tsx`). You only need the **Project ID** (visible in the project URL or Settings → Overview).
 
 ## 4. Vercel environment variables
 
@@ -39,7 +39,7 @@ Vercel dashboard → your project → **Settings → Environment Variables**. Ad
 | `PAYPAL_BUSINESS_EMAIL` | `dchtristate@gmail.com` |
 | `PAYPAL_ENV` | `live` (use `sandbox` while testing) |
 | `NEXT_PUBLIC_SITE_URL` | `https://maxperformance100.com` |
-| `NEXT_PUBLIC_CLARITY_PROJECT_ID` | ID from step 3 |
+| `NEXT_PUBLIC_CLARITY_PROJECT_ID` | `x59murp0kr` |
 
 Then **Deployments → ⋯ on the latest → Redeploy** (env changes only apply on a new deploy; `NEXT_PUBLIC_*` vars especially need a rebuild).
 
