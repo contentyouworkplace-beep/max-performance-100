@@ -457,3 +457,6 @@ export default function ProductPage() {
           .responsive-grid-1 { grid-template-columns: 1fr !important; }
         }
       `}</style>
+    </>
+  )
+}
