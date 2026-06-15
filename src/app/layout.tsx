@@ -43,6 +43,11 @@ export const metadata: Metadata = {
   verification: {
     google: "googlec1b155cb6acd07f9",
   },
+  icons: {
+    icon: "/logo.jpeg",
+    shortcut: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -202,6 +202,25 @@ export default function ProductPage() {
                 </div>
               ))}
             </div>
+
+            {/* Payment icons */}
+            <div style={{ marginTop: "1.25rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+              <span style={{ color: "#475569", fontSize: "0.72rem", marginRight: "0.25rem" }}>We accept:</span>
+              {[
+                { label: "VISA", bg: "#1a1f71", color: "#fff" },
+                { label: "MC", bg: "#eb001b", color: "#fff" },
+                { label: "AMEX", bg: "#007bc1", color: "#fff" },
+                { label: "PayPal", bg: "#009cde", color: "#fff" },
+                { label: "Discover", bg: "#ff6600", color: "#fff" },
+              ].map(({ label, bg, color }) => (
+                <span key={label} style={{
+                  background: bg, color, fontSize: "0.65rem", fontWeight: 800,
+                  padding: "3px 7px", borderRadius: "4px", letterSpacing: "0.03em",
+                }}>
+                  {label}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -388,6 +407,23 @@ export default function ProductPage() {
               🚀 Get Instant Access — $47
             </button>
           </form>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+            <span style={{ color: "#475569", fontSize: "0.72rem", marginRight: "0.25rem" }}>We accept:</span>
+            {[
+              { label: "VISA", bg: "#1a1f71", color: "#fff" },
+              { label: "MC", bg: "#eb001b", color: "#fff" },
+              { label: "AMEX", bg: "#007bc1", color: "#fff" },
+              { label: "PayPal", bg: "#009cde", color: "#fff" },
+              { label: "Discover", bg: "#ff6600", color: "#fff" },
+            ].map(({ label, bg, color }) => (
+              <span key={label} style={{
+                background: bg, color, fontSize: "0.65rem", fontWeight: 800,
+                padding: "3px 7px", borderRadius: "4px", letterSpacing: "0.03em",
+              }}>
+                {label}
+              </span>
+            ))}
+          </div>
           <p style={{ color: "#64748b", fontSize: "0.85rem" }}>
             ✓ Secure PayPal checkout &nbsp;·&nbsp; ✓ Instant download &nbsp;·&nbsp; ✓ 14-day money-back guarantee
           </p>

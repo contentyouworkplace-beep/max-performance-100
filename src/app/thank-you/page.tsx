@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import ResendDownloadForm from "@/components/ResendDownloadForm"
 
 export const metadata: Metadata = {
   title: "Thank You! Your Download Is Ready | MaxPerformance100",
@@ -24,9 +25,9 @@ export default function ThankYouPage() {
           <p style={{ color: "#cbd5e1", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "2rem" }}>
             Thank you for your purchase! Your <strong style={{ color: "#f59e0b" }}>Client Scope & Protection Playbook</strong> download links are being sent to the email
             address you used at PayPal checkout. They usually arrive within a few minutes — check your inbox and spam folder.
-            If nothing arrives within 15 minutes, email us and we&apos;ll send your files directly.
           </p>
 
+          {/* Quick-start checklist */}
           <div style={{
             background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)",
             borderRadius: "1.25rem", padding: "2rem", marginBottom: "2.5rem", textAlign: "left"
@@ -45,6 +46,9 @@ export default function ThankYouPage() {
               </div>
             ))}
           </div>
+
+          {/* Resend download links — client component */}
+          <ResendDownloadForm />
 
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/" className="btn-secondary">Return to Homepage</Link>

@@ -60,8 +60,9 @@ function shell(body: string): string {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:24px 0;">
 <tr><td align="center">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;">
-<tr><td style="background:#0f172a;padding:24px 32px;">
-  <span style="font-size:20px;font-weight:800;color:#ffffff;">Max<span style="color:${ACCENT};">Performance</span>100</span>
+<tr><td style="background:#0f172a;padding:16px 32px;">
+  <img src="https://maxperformance100.com/logo.jpeg" alt="MaxPerformance100" width="48" height="48" style="display:inline-block;border-radius:8px;vertical-align:middle;margin-right:10px;" />
+  <span style="font-size:18px;font-weight:800;color:#ffffff;vertical-align:middle;">Max<span style="color:${ACCENT};">Performance</span>100</span>
 </td></tr>
 <tr><td style="padding:32px;">
 ${body}
