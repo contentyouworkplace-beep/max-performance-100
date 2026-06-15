@@ -2,10 +2,11 @@
 User-agent: *
 Allow: /
 Disallow: /thank-you
+Disallow: /payment-failed
 Disallow: /api/
 
 # Host
 Host: https://maxperformance100.com
 
 # Sitemaps
-Sitemap: https://maxperformance100.com/sitemap.xml
+Sitemap: https://maxperfo

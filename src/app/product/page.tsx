@@ -179,7 +179,7 @@ export default function ProductPage() {
               <input type="hidden" name="no_shipping" value="1" />
               <input type="hidden" name="rm" value="1" />
               <input type="hidden" name="return" value="https://maxperformance100.com/thank-you" />
-              <input type="hidden" name="cancel_return" value="https://maxperformance100.com/product" />
+              <input type="hidden" name="cancel_return" value="https://maxperformance100.com/payment-failed" />
               <input type="hidden" name="notify_url" value="https://maxperformance100.com/api/paypal-ipn" />
               <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted" />
               <button
@@ -393,7 +393,7 @@ export default function ProductPage() {
             <input type="hidden" name="no_shipping" value="1" />
             <input type="hidden" name="rm" value="1" />
             <input type="hidden" name="return" value="https://maxperformance100.com/thank-you" />
-            <input type="hidden" name="cancel_return" value="https://maxperformance100.com/product" />
+            <input type="hidden" name="cancel_return" value="https://maxperformance100.com/payment-failed" />
             <input type="hidden" name="notify_url" value="https://maxperformance100.com/api/paypal-ipn" />
             <button
               type="submit"
@@ -457,6 +457,3 @@ export default function ProductPage() {
           .responsive-grid-1 { grid-template-columns: 1fr !important; }
         }
       `}</style>
-    </>
-  )
-}
