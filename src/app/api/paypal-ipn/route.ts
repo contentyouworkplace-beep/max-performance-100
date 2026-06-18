@@ -8,7 +8,7 @@
 //           OWNER_NOTIFY_EMAIL, NEXT_PUBLIC_SITE_URL (+ email/token vars)
 
 import { NextRequest, NextResponse } from "next/server"
-import { sendEmail, purchaseEmailHtml, ownerNotificationHtml } from "@/lib/email"
+import { sendEmail, purchaseEmailHtml, ownerNotificationHtml, addResendContact } from "@/lib/email"
 import { createDownloadToken } from "@/lib/downloadToken"
 
 export const dynamic = "force-dynamic"
@@ -109,6 +109,13 @@ export async function POST(req: NextRequest) {
       "Transaction ID": txnId,
       "Fulfillment email": sent ? "✅ sent" : "❌ FAILED — send manually",
     }),
+  })
+
+  // Add buyer to Resend Audience (best-effort).
+  await addResendContact({
+    email: payerEmail,
+    firstName: params.get("first_name") || undefined,
+    lastName: params.get("last_name") || undefined,
   })
 
   console.log(`[ipn] txn=${txnId} fulfilled for ${payerEmail} (email sent: ${sent})`)

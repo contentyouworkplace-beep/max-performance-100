@@ -79,6 +79,37 @@ ${body}
 </body></html>`
 }
 
+/** Add a contact to Resend Audience (best-effort, never throws). */
+export async function addResendContact({
+  email,
+  firstName,
+  lastName,
+}: {
+  email: string
+  firstName?: string
+  lastName?: string
+}): Promise<void> {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) return
+  try {
+    await fetch("https://api.resend.com/contacts", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        first_name: firstName || undefined,
+        last_name: lastName || undefined,
+        unsubscribed: false,
+      }),
+    })
+  } catch (err) {
+    console.error("[resend-contacts] failed to add contact:", err)
+  }
+}
+
 /** Purchase fulfillment email — sent after verified PayPal payment. */
 export function purchaseEmailHtml(downloadLinks: { label: string; url: string }[]): string {
   const buttons = downloadLinks
@@ -122,15 +153,4 @@ export function sampleEmailHtml(downloadUrl: string): string {
   <a href="${SITE}/product" style="display:block;background:${ACCENT};color:#0f172a;text-decoration:none;font-weight:800;font-size:15px;padding:14px 24px;border-radius:8px;text-align:center;margin-top:12px;">Get the Complete Playbook → $47</a>`)
 }
 
-/** Owner notification for a new sale or lead. */
-export function ownerNotificationHtml(kind: "sale" | "lead", details: Record<string, string>): string {
-  const rows = Object.entries(details)
-    .map(
-      ([k, v]) =>
-        `<tr><td style="padding:6px 12px;color:#64748b;font-size:13px;border-bottom:1px solid #e2e8f0;">${k}</td><td style="padding:6px 12px;color:#0f172a;font-size:13px;font-weight:600;border-bottom:1px solid #e2e8f0;">${v}</td></tr>`
-    )
-    .join("")
-  return shell(`
-  <h1 style="margin:0 0 16px;color:#0f172a;font-size:20px;">${kind === "sale" ? "💰 New sale!" : "📧 New lead captured"}</h1>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e2e8f0;border-radius:8px;">${rows}</table>`)
-}
+/** Owner noti

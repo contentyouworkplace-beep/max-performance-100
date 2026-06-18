@@ -3,7 +3,7 @@
 // regardless, so email failures only get logged.
 
 import { NextRequest, NextResponse } from "next/server"
-import { sendEmail, sampleEmailHtml, ownerNotificationHtml } from "@/lib/email"
+import { sendEmail, sampleEmailHtml, ownerNotificationHtml, addResendContact } from "@/lib/email"
 import { createDownloadToken } from "@/lib/downloadToken"
 
 export const dynamic = "force-dynamic"
@@ -41,8 +41,7 @@ export async function POST(req: NextRequest) {
       }),
     ])
 
-    return NextResponse.json({ ok: true, emailed: sentToLead })
-  } catch {
-    return NextResponse.json({ error: "Server error" }, { status: 500 })
-  }
-}
+    // Add to Resend Audience (best-effort).
+    await addResendContact({ email: sanitized })
+
+    return NextResponse.json({ ok: true, e
