@@ -106,18 +106,18 @@ export function purchaseEmailHtml(downloadLinks: { label: string; url: string }[
   </p>`)
 }
 
-/** Free-sample email — sent on lead capture. */
-export function sampleEmailHtml(): string {
+/** Free-sample email — sent on lead capture. downloadUrl is a signed /api/download link. */
+export function sampleEmailHtml(downloadUrl: string): string {
   return shell(`
   <h1 style="margin:0 0 8px;color:#0f172a;font-size:24px;">Your free sample is here 📕</h1>
   <p style="margin:0 0 24px;color:#475569;font-size:15px;line-height:1.7;">
     Here's your free sample chapter from the <strong>Client Scope &amp; Protection Playbook</strong> —
     a taste of the system freelancers use to stop scope creep and get paid on time.
   </p>
-  <a href="${SITE}/Client_Scope_Protection_SOP_TEASER.pdf" style="display:block;background:${BRAND};color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:8px;text-align:center;">⬇ Download the Free Sample (PDF)</a>
+  <a href="${downloadUrl}" style="display:block;background:${BRAND};color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:8px;text-align:center;">⬇ Download the Free Sample (PDF)</a>
   <p style="margin:24px 0 0;color:#475569;font-size:14px;line-height:1.7;">
-    When you're ready for the complete system — all 6 modules, 13 email scripts, and every template —
-    the full playbook is a one-time <strong>$47</strong>:
+    This link is personal to you and valid for <strong>7 days</strong>. When you're ready for the complete system —
+    all 6 modules, 13 email scripts, and every template — the full playbook is a one-time <strong>$47</strong>:
   </p>
   <a href="${SITE}/product" style="display:block;background:${ACCENT};color:#0f172a;text-decoration:none;font-weight:800;font-size:15px;padding:14px 24px;border-radius:8px;text-align:center;margin-top:12px;">Get the Complete Playbook → $47</a>`)
 }

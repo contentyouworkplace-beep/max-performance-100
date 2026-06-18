@@ -24,6 +24,10 @@ const FILES: Record<string, { name: string; mime: string }> = {
     name: "Client_Scope_Protection_Cheat_Sheet.docx",
     mime: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
   },
+  sample: {
+    name: "Client_Scope_Protection_TEASER.pdf",
+    mime: "application/pdf",
+  },
 }
 
 function htmlError(status: number, title: string, message: string): NextResponse {

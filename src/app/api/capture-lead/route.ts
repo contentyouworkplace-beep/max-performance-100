@@ -4,6 +4,7 @@
 
 import { NextRequest, NextResponse } from "next/server"
 import { sendEmail, sampleEmailHtml, ownerNotificationHtml } from "@/lib/email"
+import { createDownloadToken } from "@/lib/downloadToken"
 
 export const dynamic = "force-dynamic"
 
@@ -16,12 +17,17 @@ export async function POST(req: NextRequest) {
     const sanitized = email.trim().toLowerCase().slice(0, 320)
     console.log(`[lead] ${new Date().toISOString()} ${sanitized}`)
 
+    // Generate a signed, time-limited download URL for the free sample.
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://maxperformance100.com").replace(/\/$/, "")
+    const token = createDownloadToken(sanitized)
+    const sampleUrl = `${siteUrl}/api/download?token=${encodeURIComponent(token)}&file=sample`
+
     // Send the sample to the lead + notify the owner (both best-effort).
     const [sentToLead] = await Promise.all([
       sendEmail({
         to: sanitized,
         subject: "Your free sample — Client Scope & Protection Playbook 📕",
-        html: sampleEmailHtml(),
+        html: sampleEmailHtml(sampleUrl),
         replyTo: process.env.OWNER_NOTIFY_EMAIL || "support.maxperformance100@gmail.com",
       }),
       sendEmail({
