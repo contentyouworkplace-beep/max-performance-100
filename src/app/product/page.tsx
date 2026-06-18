@@ -177,6 +177,7 @@ export default function ProductPage() {
               <input type="hidden" name="no_note" value="0" />
               <input type="hidden" name="cn" value="Special instructions (optional)" />
               <input type="hidden" name="no_shipping" value="1" />
+              <input type="hidden" name="landing_page" value="Billing" />
               <input type="hidden" name="rm" value="1" />
               <input type="hidden" name="return" value="https://maxperformance100.com/thank-you" />
               <input type="hidden" name="cancel_return" value="https://maxperformance100.com/payment-failed" />
@@ -391,6 +392,7 @@ export default function ProductPage() {
             <input type="hidden" name="amount" value="47.00" />
             <input type="hidden" name="currency_code" value="USD" />
             <input type="hidden" name="no_shipping" value="1" />
+              <input type="hidden" name="landing_page" value="Billing" />
             <input type="hidden" name="rm" value="1" />
             <input type="hidden" name="return" value="https://maxperformance100.com/thank-you" />
             <input type="hidden" name="cancel_return" value="https://maxperformance100.com/payment-failed" />
